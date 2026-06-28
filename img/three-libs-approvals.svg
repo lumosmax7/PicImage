@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect x="0" y="0" width="1280" height="760" fill="#FFFFFF"/>
+
+  <text x="50" y="48" font-size="26" font-weight="700" fill="#0F172A">审批驱动授权：四个飞书审批</text>
+  <text x="50" y="76" font-size="14" fill="#64748B">所有授权动作都从飞书审批发起；审批一通过，系统自动落地，无需人工配置</text>
+
+  <!-- ① 新建组织 -->
+  <rect x="56" y="106" width="576" height="200" rx="14" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5"/>
+  <circle cx="90" cy="142" r="18" fill="#4F46E5"/>
+  <text x="90" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">1</text>
+  <text x="118" y="148" font-size="16" font-weight="700" fill="#3730A3">新建组织（Org）</text>
+  <text x="80" y="184" font-size="13" fill="#64748B">审批人：管理员 / 指定审批人</text>
+  <text x="80" y="214" font-size="13.5" font-weight="600" fill="#334155">通过后自动：</text>
+  <text x="92" y="244" font-size="13" fill="#334155">· 创建 Org + 三个团队（developers/reviewers/maintainers）</text>
+  <text x="92" y="272" font-size="13" fill="#334155">· 加入初始成员（已实建 GXZL-Software 等）</text>
+
+  <!-- ② 成员角色变更 -->
+  <rect x="648" y="106" width="576" height="200" rx="14" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.5"/>
+  <circle cx="682" cy="142" r="18" fill="#2563EB"/>
+  <text x="682" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">2</text>
+  <text x="710" y="148" font-size="16" font-weight="700" fill="#1D4ED8">成员角色变更</text>
+  <text x="672" y="184" font-size="13" fill="#64748B">审批人：项目负责人 / 管理员</text>
+  <text x="672" y="214" font-size="13.5" font-weight="600" fill="#334155">通过后自动：</text>
+  <text x="684" y="244" font-size="13" fill="#334155">· 写「项目-人-角色」多维表</text>
+  <text x="684" y="272" font-size="13" fill="#334155">· 声明式对账 → 调整该人所在 Gitea 团队</text>
+
+  <!-- ③ 新建三库仓库 -->
+  <rect x="56" y="326" width="576" height="200" rx="14" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1.5"/>
+  <circle cx="90" cy="362" r="18" fill="#D97706"/>
+  <text x="90" y="368" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">3</text>
+  <text x="118" y="368" font-size="16" font-weight="700" fill="#B45309">新建三库仓库</text>
+  <text x="80" y="404" font-size="13" fill="#64748B">审批人：管理员 / 负责人</text>
+  <text x="80" y="434" font-size="13.5" font-weight="600" fill="#334155">通过后自动：</text>
+  <text x="92" y="464" font-size="13" fill="#334155">· 建仓库（Private）+ 团队授权</text>
+  <text x="92" y="492" font-size="13" fill="#334155">· 套 main/release/* 分支保护 + v*-RC/v*-RELEASE Tag 保护</text>
+
+  <!-- ④ 开发文档入库 -->
+  <rect x="648" y="326" width="576" height="200" rx="14" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+  <circle cx="682" cy="362" r="18" fill="#059669"/>
+  <text x="682" y="368" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">4</text>
+  <text x="710" y="368" font-size="16" font-weight="700" fill="#047857">开发文档入库（C4）</text>
+  <text x="672" y="404" font-size="13" fill="#64748B">审批人：项目负责人（或签）</text>
+  <text x="672" y="434" font-size="13.5" font-weight="600" fill="#334155">通过后自动：</text>
+  <text x="684" y="464" font-size="13" fill="#334155">· doc-intake 文档闸变绿 → 两闸全绿自动合并</text>
+  <text x="684" y="492" font-size="13" fill="#334155">· 文档快照归档 + 台账 + 群公告</text>
+
+  <!-- 可靠性 -->
+  <rect x="56" y="552" width="1168" height="134" rx="14" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="78" y="586" font-size="16" font-weight="700" fill="#0F172A">审批可靠性（运维加固）</text>
+  <text x="78" y="618" font-size="13.5" fill="#334155">· 幂等去重：按事件 ID 去重，重复投递返回 duplicate、不重复执行</text>
+  <text x="78" y="646" font-size="13.5" fill="#334155">· 记录持久化：审批记录原子落盘（approvals.json），容器重启后仍幂等</text>
+  <text x="78" y="674" font-size="13.5" fill="#334155">· 动态防重名：新建 Org 填表时实时拉取现有组织列表，避免重名</text>
+</svg>
